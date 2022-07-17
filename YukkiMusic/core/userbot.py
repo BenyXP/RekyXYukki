@@ -22,46 +22,45 @@ assistantids = []
 class Userbot(Client):
     def __init__(self):
         self.one = Client(
+            name="string1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING1),
-            no_updates=True,
+            session_string=str(config.STRING1),
+            in_memory=True,
         )
         self.two = Client(
+            name="string2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING2),
-            no_updates=True,
+            session_string=str(config.STRING2),
+            in_memory=True,
         )
         self.three = Client(
+            name="string3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING3),
-            no_updates=True,
+            session_string=str(config.STRING3),
+            in_memory=True,
         )
         self.four = Client(
+            name="string4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING4),
-            no_updates=True,
+            session_string=str(config.STRING4),
+            in_memory=True,
         )
         self.five = Client(
+            name="string5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING5),
-            no_updates=True,
+            session_string=str(config.STRING5),
+            in_memory=True,
         )
 
     async def start(self):
         LOGGER(__name__).info(f"Starting Assistant Clients")
         if config.STRING1:
-            await self.one.start()
-            try:
-                await self.one.join_chat("")
-                await self.one.join_chat("")
-                await self.one.join_chat("")
-            except:
-                pass
+            await self.one.run()
             assistants.append(1)
             try:
                 await self.one.send_message(
@@ -86,13 +85,7 @@ class Userbot(Client):
                 f"Assistant Started as {self.one.name}"
             )
         if config.STRING2:
-            await self.two.start()
-            try:
-                await self.two.join_chat("")
-                await self.two.join_chat("")
-                await self.two.join_chat("")
-            except:
-                pass
+            await self.two.run()
             assistants.append(2)
             try:
                 await self.two.send_message(
@@ -117,13 +110,7 @@ class Userbot(Client):
                 f"Assistant Two Started as {self.two.name}"
             )
         if config.STRING3:
-            await self.three.start()
-            try:
-                await self.three.join_chat("")
-                await self.three.join_chat("")
-                await self.three.join_chat("")
-            except:
-                pass
+            await self.three.run()
             assistants.append(3)
             try:
                 await self.three.send_message(
@@ -148,13 +135,7 @@ class Userbot(Client):
                 f"Assistant Three Started as {self.three.name}"
             )
         if config.STRING4:
-            await self.four.start()
-            try:
-                await self.four.join_chat("")
-                await self.four.join_chat("")
-                await self.four.join_chat("")
-            except:
-                pass
+            await self.four.run()
             assistants.append(4)
             try:
                 await self.four.send_message(
@@ -179,13 +160,7 @@ class Userbot(Client):
                 f"Assistant Four Started as {self.four.name}"
             )
         if config.STRING5:
-            await self.five.start()
-            try:
-                await self.five.join_chat("")
-                await self.five.join_chat("")
-                await self.five.join_chat("")
-            except:
-                pass
+            await self.five.run()
             assistants.append(5)
             try:
                 await self.five.send_message(
